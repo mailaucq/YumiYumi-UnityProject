@@ -2,15 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 public class Receta{
-	public List<RecetaMedida> recetaMedidaList;
+	public Dictionary<string,RecetaMedida> recetaMedidaMap;
+	public int numberStep;
 	public Receta(){
-		recetaMedidaList = new List<RecetaMedida>();
+		recetaMedidaMap = new Dictionary<string,RecetaMedida>();
+		numberStep = 0;
 	}
-	public List<RecetaMedida> get(){
-		return recetaMedidaList;
+	public Dictionary<string,RecetaMedida> get(){
+		return recetaMedidaMap;
 	}
-	public void add(RecetaMedida recetaMedida){
-		recetaMedidaList.Add (recetaMedida);
+	public void addRecetaMedida(string key, RecetaMedida recetaMedida){
+		recetaMedidaMap.Add(key,recetaMedida);
+		numberStep++;
 	}
 	
 }

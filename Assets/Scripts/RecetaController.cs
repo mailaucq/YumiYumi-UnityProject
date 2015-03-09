@@ -75,13 +75,13 @@ public class RecetaController : MonoBehaviour {
 				utenciliosDestino[i].SetActive(false);
 			}
 		}
-		for(int i = 0;i< ingredientes.Length;i++){
+		/*for(int i = 0;i< ingredientes.Length;i++){
 			if(ingredienteName == ingredientes[i].name){
 				ingredientes[i].SetActive(true);
 			} else {
 				ingredientes[i].SetActive(false);
 			}
-		}
+		}*/
 	}
 	void DestroyAllObjectReceta(Notification notification){
 		bool flag = (bool)notification.data;
