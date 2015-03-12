@@ -4,7 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: vaso_vacio
     21300002: vaso_lleno
-    21300004: vaso_capa
+    21300004: vaso_relleno
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -66,15 +66,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: vaso_capa
+    - name: vaso_relleno
       rect:
         serializedVersion: 2
         x: 426
         y: 0
         width: 155
         height: 304
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

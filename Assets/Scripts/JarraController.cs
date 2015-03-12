@@ -20,7 +20,7 @@ public class JarraController : MonoBehaviour {
 		} else {
 			estaEchando = false;
 		}
-		//estaEchando = true;
+		estaEchando = true;
 	}
 	void Update () {
 		if (colisiono) {
