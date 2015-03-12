@@ -3,11 +3,11 @@ using System.Collections;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using GooglePlayGames;
+//using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
 
 public class EstadoJuego : MonoBehaviour {
-	public GoogleAnalyticsV3 googleAnalytics;
+	//public GoogleAnalyticsV3 googleAnalytics;
 	public int puntuacionMaxima = 0;
 	public int recetaIndex = 0;
 	public string idUser = "Yumi";
@@ -18,15 +18,15 @@ public class EstadoJuego : MonoBehaviour {
 		"http://yumiyumi.site90.com/images/cuyes/cuy3.png"};
 	public static EstadoJuego estadoJuego;
 	private String nombreArchivo;
-	private GooglePlayCloud cloud;
+	//private GooglePlayCloud cloud;
 	void Awake(){
 		nombreArchivo = Application.persistentDataPath + "/datos.dat";
 		if (estadoJuego == null) {
 			estadoJuego = this;
 			DontDestroyOnLoad (gameObject);
-			cloud = new GooglePlayCloud();
-			PlayGamesPlatform.DebugLogEnabled = false;
-			PlayGamesPlatform.Activate();
+			//cloud = new GooglePlayCloud();
+			//PlayGamesPlatform.DebugLogEnabled = false;
+			//PlayGamesPlatform.Activate();
 		} else if (estadoJuego != this) {
 			Destroy(gameObject);
 		}
@@ -36,9 +36,9 @@ public class EstadoJuego : MonoBehaviour {
 	void Start () {
 		Cargar ();
 		//NotificationCenter.DefaultCenter ().PostNotification (this,"GameStart");
-		InicioSesionGooglePlay (true);
+		//InicioSesionGooglePlay (true);
 	}
-	public void InicioSesionGooglePlay(bool silencioso){
+	/*public void InicioSesionGooglePlay(bool silencioso){
 		((PlayGamesPlatform)Social.Active).Authenticate ((bool success) => {
 			if(success){
 				googleAnalytics.LogSocial("Google", "login", "Usuario "+EstadoJuego.estadoJuego.idUser+" logueado");
@@ -46,7 +46,7 @@ public class EstadoJuego : MonoBehaviour {
 				cloud.CloudLoad();
 			}
 		}, silencioso);
-	}
+	}*/
 	// Update is called once per frame
 	void Update () {
 	}
@@ -60,7 +60,7 @@ public class EstadoJuego : MonoBehaviour {
 		file.Close ();
 		
 		if (online) {
-			cloud.CloudSave (datos);
+			//cloud.CloudSave (datos);
 		}
 	}
 	void Cargar(){
@@ -79,7 +79,7 @@ public class EstadoJuego : MonoBehaviour {
 class DatosAGuardar{
 	public int puntuacionMaxima;
 }
-class GooglePlayCloud : GooglePlayGamesCloudHelper<DatosAGuardar>{
+/*class GooglePlayCloud : GooglePlayGamesCloudHelper<DatosAGuardar>{
 	protected override DatosAGuardar ConflictoAlGuardar(int slot, DatosAGuardar local, DatosAGuardar server){
 		if (local.puntuacionMaxima > server.puntuacionMaxima) {
 			return local;		
@@ -94,4 +94,4 @@ class GooglePlayCloud : GooglePlayGamesCloudHelper<DatosAGuardar>{
 			EstadoJuego.estadoJuego.Guardar(false);
 		}
 	}
-}
+}*/

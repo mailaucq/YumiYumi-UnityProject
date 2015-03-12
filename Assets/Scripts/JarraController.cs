@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class JarraController : MonoBehaviour {
-	private bool estaEchando = true;
+	private bool estaEchando = false;
 	private Animator animator;
 	private bool colisiono = false;
 	private bool flagunique = true;
@@ -20,7 +20,7 @@ public class JarraController : MonoBehaviour {
 		} else {
 			estaEchando = false;
 		}
-		estaEchando = true;
+		//estaEchando = true;
 	}
 	void Update () {
 		if (colisiono) {

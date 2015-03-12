@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GameOverController : MonoBehaviour {
-	public GoogleAnalyticsV3 googleAnalytics;
+	//public GoogleAnalyticsV3 googleAnalytics;
 	public GUIText total;
 	public GUIText record;
 	public GUIText titleGameOver;
@@ -22,6 +22,6 @@ public class GameOverController : MonoBehaviour {
 		}
 		total.guiText.text = puntuacion.puntuacion.ToString ();
 		record.guiText.text = EstadoJuego.estadoJuego.puntuacionMaxima.ToString ();
-		googleAnalytics.LogEvent("GameOver", "Show", "Usuario "+ EstadoJuego.estadoJuego.idUser+" Puntuacion "+puntuacion.puntuacion.ToString (),  1);
+		//googleAnalytics.LogEvent("GameOver", "Show", "Usuario "+ EstadoJuego.estadoJuego.idUser+" Puntuacion "+puntuacion.puntuacion.ToString (),  1);
 	}
 }
