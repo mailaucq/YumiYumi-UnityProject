@@ -64,8 +64,12 @@ public class GameController : MonoBehaviour {
 	public void PlayReceta(Notification Notification){
 		string key = (string)Notification.data;
 		if (countStep < currentReceta.numberStep) {
-			RecetaMedida recetaMedida = currentReceta.recetaMedidaMap[key];
-			NotificationCenter.DefaultCenter ().PostNotification (this, "StepRecetaIntruction", recetaMedida);
+			if(currentReceta.recetaMedidaMap.ContainsKey(key)){
+				RecetaMedida recetaMedida = currentReceta.recetaMedidaMap[key];
+				NotificationCenter.DefaultCenter ().PostNotification (this, "StepRecetaIntruction", recetaMedida);
+			} else {
+				//NotificationCenter.DefaultCenter ().PostNotification (this, "GameOver", true);
+			}
 		}
 		if (countStep == currentReceta.numberStep) {
 			NotificationCenter.DefaultCenter ().PostNotification (this, "GameOver", true);

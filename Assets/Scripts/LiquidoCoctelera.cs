@@ -20,7 +20,6 @@ public class LiquidoCoctelera : MonoBehaviour {
 		bool flagAction = (bool)notification.data;
 		if (flagAction) {
 			NotificationCenter.DefaultCenter ().PostNotification (this, "ColisionoOlla", true);
-			Debug.Log (colisiono);
 			if (!colisiono) {
 				NotificationCenter.DefaultCenter ().PostNotification (this, "LiquidoEnVaso");
 			}

@@ -76,22 +76,6 @@ public class ActionUtencilioController : MonoBehaviour {
 		bool flagAction = (bool)notification.data;
 		if (flagAction) {
 			NotificationCenter.DefaultCenter ().PostNotification (this, "ActionMedida", flagAction);
-			NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaAngry", false);
-			NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaFire", false);
-			NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaSurprise", false);
-			NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaHappy", false);
-			NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaSerio", false);
-			if (maxCantidadTmp == medida) {
-				NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaHappy", true);
-			} else if (medida < RANGEMEDIDA) {
-				NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaSerio", true);
-			} else if (medida > maxCantidadTmp - RANGEMEDIDA && medida < maxCantidadTmp) {
-				NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaSurprise", true);
-			} else if (medida < maxCantidadTmp + RANGEMEDIDA && medida > maxCantidadTmp) {
-				NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaAngry", true);
-			} else if (medida > maxCantidadTmp + RANGEMEDIDA) {
-				NotificationCenter.DefaultCenter ().PostNotification (this, "MaestroEstaFire", true);
-			}
 			if(maxCantidadTmp + RANGEMEDIDA >= medida && maxCantidadTmp - RANGEMEDIDA <= medida && flagPuntoSumado == false){
 				NotificationCenter.DefaultCenter ().PostNotification (this, "CalculatePoints", PUNTOSGANADOS);
 				flagPuntoSumado = true;
